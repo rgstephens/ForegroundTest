@@ -7,7 +7,7 @@ export default class Timestamps extends Component {
       <View>
         <FlatList
           data={this.props.timestamp}
-          renderItem={({ item }) => <Text>{item.time.toISOString()} (elapsed: {item.diff})</Text>}
+          renderItem={({ item }) => <Text>{item.time.toISOString()}</Text>}
           keyExtractor={(item, index) => index}
         />
       </View>
