@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button, StyleSheet, Text, View, FlatList, Switch } from "react-native";
-import FGServiceBridge from "../FGServiceBridgeNativeModule";
 
 export default class Timestamps extends Component {
   constructor() {
@@ -11,21 +10,15 @@ export default class Timestamps extends Component {
   }
 
   toggleService = value => {
-    console.log("toggleService:", value);
+    console.log('toggleService:', value);
     this.setState({
       fgServiceStatus: value
     });
 
-    if (value) {
-      console.log("starting service");
-      FGServiceBridge.startService().then(function(value) {
-        console.log("startService return:", value);
-      });
+    if (value == true) {
+      console.log("Switch is On.");
     } else {
-      console.log("stopping service");
-      FGServiceBridge.stopService().then(function(value) {
-        console.log("stopService return:", value);
-      });
+      console.log("Switch is Off.");
     }
   };
 
@@ -34,7 +27,7 @@ export default class Timestamps extends Component {
       <View>
         <Switch
           onValueChange={value => this.toggleService(value)}
-          style={{ marginBottom: 10, alignSelf: "center" }}
+          style={{ marginBottom: 10 }}
           value={this.state.fgServiceStatus}
         />
         <FlatList

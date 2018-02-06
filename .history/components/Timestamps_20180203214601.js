@@ -19,12 +19,12 @@ export default class Timestamps extends Component {
     if (value) {
       console.log("starting service");
       FGServiceBridge.startService().then(function(value) {
-        console.log("startService return:", value);
+        console.log("startService return:", value, ", state:", component.state);
       });
     } else {
       console.log("stopping service");
       FGServiceBridge.stopService().then(function(value) {
-        console.log("stopService return:", value);
+        console.log("stopService return:", value, ", state:", component.state);
       });
     }
   };
