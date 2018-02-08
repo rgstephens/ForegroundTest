@@ -30,7 +30,8 @@ export default class Timestamps extends Component {
   };
 
   getPreferredField(item) {
-    const value = item.name ? item.name : (item.localName ? item.localName : (item.id ? item.id : (item.diff ? "elapsed: " + item.diff : "")));
+    const value = item.name ? item.name : (item.localName ? item.localName : (item.id ? item.id : (item.time ? item.time.toISOString() + "(elapsed: " + item.diff + "" : "")));
+    console.log('item:', value);
     return value;
   }
 
@@ -45,7 +46,7 @@ export default class Timestamps extends Component {
         <FlatList
           data={this.props.timestamp}
           renderItem={({ item }) => (
-            <Text style={{ alignSelf: "center" }}>
+            <Text>
               {this.getPreferredField(item)}
             </Text>
           )}

@@ -16,7 +16,7 @@ export const timestamps = (state = [], action) => {
         const diff = new Date() - state[0].time;
         ms = new Date(diff).toISOString().slice(14, 21);
       }
-      return [{ time: new Date(), diff: ms, name: action.device.name, localName: action.device.localName, id: action.device.id }, ...state];
+      return [{ time: new Date(), diff: ms }, ...state];
     case "RESET":
       return [];
     default:
