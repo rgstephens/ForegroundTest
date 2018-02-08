@@ -8,7 +8,7 @@ const scanLength = 2000;     // How long to scan in ms
 
 // if no foreground service, this only runs when app has the focus
 setInterval(function() {
-    console.log('>>> startScan', new Date());
+    console.log('startScan', new Date());
     store.dispatch({ type: 'TIMESTAMP' });
     doScan(scanLength);
   }, scanInterval);

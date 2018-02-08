@@ -30,6 +30,7 @@ export default class Timestamps extends Component {
   };
 
   getPreferredField(item) {
+    //const value = item.name ? item.name : (item.localName ? item.localName : (item.id ? item.id : (item.time ? item.time.toISOString() + " (elapsed: " + item.diff + ")" : "")));
     const value = item.name ? item.name : (item.localName ? item.localName : (item.id ? item.id : (item.diff ? "elapsed: " + item.diff : "")));
     return value;
   }
