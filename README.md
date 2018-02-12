@@ -2,6 +2,17 @@ This is a React Native Foreground Service example app inspired by this [issue](h
 
 The intent of this app is to demonstrate how to do background bluetooth scanning using the Android Foreground Service.
 
+## Interval Method
+
+- [ ] Uses [react-native-background-job](https://github.com/vikeri/react-native-background-job)
+- [x] Simple setInterval
+- [x] option to start Foreground Service
+
+## Action Performed at Each 10 Second Interval
+
+- [x] Writes timestamp to Redux store
+- [x] Calls bluetoothScan from [react-native-ble-plx](https://github.com/Polidea/react-native-ble-plx) for devices
+
 ```
 npm install --save react-native-ble-plx
 react-native link react-native-ble-plx
